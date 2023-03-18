@@ -1,0 +1,15 @@
+{
+  "name": "@duskmoon-dev/cli",
+  "version": "1.0.0",
+  "description": "build tools of @duskmmon-dev",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "duskmoon",
+    "build-tools"
+  ],
+  "author": "Jonathan Gao",
+  "license": "MIT"
+}

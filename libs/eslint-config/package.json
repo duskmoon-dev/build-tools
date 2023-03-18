@@ -1,0 +1,15 @@
+{
+  "name": "@duskmoon-dev/eslint-config",
+  "version": "1.0.0",
+  "description": "eslint config of @duskmoon-dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "config"
+  ],
+  "author": "Jonathan Gao",
+  "license": "MIT"
+}
