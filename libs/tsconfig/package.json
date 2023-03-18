@@ -1,0 +1,38 @@
+{
+  "name": "@duskmoon-dev/tsconfig",
+  "version": "1.0.0",
+  "description": "tsconfig of @duskmoon-dev",
+  "main": "tsconfig.json",
+  "scripts": {
+  },
+  "keywords": [
+    "config",
+    "typescript",
+    "tsconfig"
+  ],
+  "author": "Jonathan Gao",
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "@duskmoon-dev"
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "typescript": "^4.0.0 || ^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
