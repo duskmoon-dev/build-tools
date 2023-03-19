@@ -1,9 +1,10 @@
 import typescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 
 export default {
-	input: 'src/index.ts',
+	input: ['src/index.ts'],
 	output: {
     inlineDynamicImports: true,
 		file: 'dist/dm-cli.cjs',
@@ -11,8 +12,9 @@ export default {
 		format: 'cjs'
 	},
   plugins: [
-    commonjs(),
-    nodeResolve(),
+    nodeResolve({ preferBuiltins: false }),
     typescript(),
+    commonjs(),
+    json(),
   ],
 };

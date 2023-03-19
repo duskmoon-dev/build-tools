@@ -40,3 +40,6 @@ dist
 
 # typscript
 *.tsbuildinfo
+
+# rollup cache
+.rollup.cache

@@ -39,16 +39,16 @@ program
   });
 
 program
-  .command("lint <dir>")
-  .description("run eslint command in <dir>")
+  .command("lint <glob>")
+  .description("run eslint command in <glob>")
   .option(
     "--fix",
     "output moudle type, for example: es2021, es2022, esnext",
     "false"
   )
-  .action(async (cmd, opts) => {
+  .action(async (glob, opts) => {
     const { run } = await import("./tasks/lint.js");
-    await run(cmd, opts);
+    await run(glob, opts);
   });
 
 program
