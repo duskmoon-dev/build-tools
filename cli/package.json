@@ -4,7 +4,7 @@
   "description": "build tools of @duskmmon-dev",
   "type": "module",
   "bin": {
-    "dm-cli": "bin/cli.js"
+    "dm-cli": "./dist/dm-cli.cjs"
   },
   "exports": {
     ".": {
@@ -17,6 +17,7 @@
     "build": "npm-run-all --parallel build:*",
     "build:esm": "tsc --module esnext --target es2021 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
+    "build:bundle": "rollup -c rollup.config.js",
     "test": "jest",
     "clean": "rimraf dist"
   },
@@ -36,7 +37,12 @@
     "rimraf": "^4.4.0"
   },
   "dependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-dynamic-import-vars": "^2.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
     "commander": "^10.0.0",
+    "rollup": "^3.19.1",
     "typescript": "^4.9.4"
   }
 }

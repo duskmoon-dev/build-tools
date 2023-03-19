@@ -32,9 +32,10 @@ program
 program
   .command("bundle")
   .description("bundle script")
-  .action(async (cmd, opts) => {
+  .option("-i, --input <file>", 'entry file')
+  .action(async (opts) => {
     const { run } = await import("./tasks/bundle.js");
-    await run(cmd, opts);
+    await run(opts);
   });
 
 program
