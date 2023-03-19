@@ -2,9 +2,6 @@
   "name": "@duskmoon-dev/tsconfig",
   "version": "1.0.0",
   "description": "tsconfig of @duskmoon-dev",
-  "main": "tsconfig.json",
-  "scripts": {
-  },
   "keywords": [
     "config",
     "typescript",
@@ -12,13 +9,10 @@
   ],
   "author": "Jonathan Gao",
   "license": "MIT",
-  "eslintConfig": {
-    "extends": "@duskmoon-dev"
-  },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "dist"
+  "files": [
+    "base.json",
+    "nextjs.json",
+    "react-library.json"
   ],
   "devDependencies": {
     "typescript": "^4.9.4"
