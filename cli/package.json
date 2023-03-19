@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "build tools of @duskmmon-dev",
   "type": "module",
-  "main": "bin/index.js",
   "bin": {
-    "dm-cli": "bin/index.js"
+    "dm-cli": "bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
   },
   "scripts": {
     "prebuild": "npm run clean",
