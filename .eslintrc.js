@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['@duskmoon-dev'],
+  extends: ["@duskmoon-dev"],
 };
