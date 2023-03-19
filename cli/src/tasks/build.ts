@@ -1,5 +1,1 @@
-
-
-export const run = async ({}) => {
-
-};
+export const run = async (opts: any) => {};
