@@ -5,6 +5,7 @@
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "importHelpers": true,
     "outDir": "./dist",
     "rootDir": "./src"
   }
