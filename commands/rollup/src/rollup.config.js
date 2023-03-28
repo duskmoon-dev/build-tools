@@ -3,7 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 
-const name = 'rollup';
+const name = process.env.BUNDLE_NAME || 'bundle';
 
 const plugins = [
   nodeResolve(),
@@ -17,14 +17,14 @@ export default {
   output: [
     {
       inlineDynamicImports: true,
+      dir: 'dist',
       name: name,
-      file: 'dist/rollup.cjs',
-      format: 'umd'
+      format: 'cjs'
     },
     {
       inlineDynamicImports: true,
+      dir: 'dist',
       name: name,
-      file: 'dist/rollup.js',
       format: 'es'
     },
   ],
