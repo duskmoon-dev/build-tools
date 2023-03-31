@@ -18,10 +18,11 @@
     }
   },
   "scripts": {
-    "build": "npm-run-all --serial clean build:*",
+    "build": "npm-run-all --serial clean build:* rename-to-cjs",
     "build:esm": "tsc --module esnext --target es2021 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
     "build:bundle": "rollup -c rollup.config.js",
+    "rename-to-cjs": "node bin/rename-to-cjs.js 'dist/cjs/**/*.js'",
     "test": "jest",
     "clean": "rimraf dist"
   },
@@ -32,6 +33,7 @@
   "author": "Jonathan Gao",
   "license": "MIT",
   "files": [
+    "bin",
     "dist"
   ],
   "devDependencies": {
@@ -51,7 +53,6 @@
     "commander": "^10.0.0",
     "eslint": "^8.32.0",
     "rollup": "^3.19.1",
-    "tslib": "^2.5.0",
     "typescript": "^4.9.4"
   }
 }
