@@ -9,20 +9,20 @@
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "require": "./dist/cjs/index.cjs"
     },
     "./package.json": "./package.json",
     "./*": {
       "import": "./dist/esm/*.js",
-      "require": "./dist/cjs/*.js"
+      "require": "./dist/cjs/*.cjs"
     }
   },
   "scripts": {
-    "build": "npm-run-all --serial clean build:* rename-to-cjs",
+    "build": "npm-run-all --serial clean build:*",
     "build:esm": "tsc --module esnext --target es2021 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
     "build:bundle": "rollup -c rollup.config.js",
-    "rename-to-cjs": "node bin/rename-to-cjs.js 'dist/cjs/**/*.js'",
+    "rename-to-cjs": "rename-to-cjs 'dist/cjs/**/*.js'",
     "test": "jest",
     "clean": "rimraf dist"
   },
@@ -37,6 +37,7 @@
     "dist"
   ],
   "devDependencies": {
+    "@duskmoon-dev/rename-to-cjs": "workspace:^1.0.0",
     "@duskmoon-dev/tsconfig": "workspace:^1.0.0",
     "@types/eslint": "^8.21.2",
     "@types/node": "^18.15.3",
@@ -54,5 +55,9 @@
     "eslint": "^8.32.0",
     "rollup": "^3.19.1",
     "typescript": "^4.9.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
