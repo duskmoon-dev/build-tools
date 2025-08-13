@@ -31,21 +31,24 @@
     "dist"
   ],
   "devDependencies": {
-    "@duskmoon-dev/tsconfig": "workspace:^1.0.0",
-    "@types/eslint": "^8.21.2",
-    "@types/node": "^18.15.3",
+    "@duskmoon-dev/tsconfig": "workspace:^",
+    "@types/eslint": "^9.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.2.1",
+    "jest": "^30.0.5",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^4.4.0"
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.4.1"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-dynamic-import-vars": "^2.0.3",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "commander": "^10.0.0",
-    "eslint": "^8.32.0",
-    "rollup": "^3.19.1",
-    "typescript": "^4.9.4"
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-dynamic-import-vars": "^2.1.5",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "commander": "^14.0.0",
+    "eslint": "^9.33.0",
+    "rollup": "^4.46.2",
+    "typescript": "^5.9.2"
   }
 }

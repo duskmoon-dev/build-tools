@@ -1,8 +1,28 @@
 import { ESLint } from "eslint";
 
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 export const run = async (files = "src/**/*.js", opts: any) => {
     // 1. Create an instance with the `fix` option.
-    const eslint = new ESLint({ fix: opts.fix === 'true' });
+    const eslintOptions: ESLint.Options = {
+      fix: opts.fix === 'true',
+      overrideConfigFile: path.resolve(__dirname, '../../../.eslintrc.js'),
+      cwd: path.resolve(__dirname, '../../../')
+    };
+
+    if (opts.tsconfigPath) {
+      eslintOptions.overrideConfig = {
+        parserOptions: {
+          project: opts.tsconfigPath
+        }
+      };
+    }
+
+    const eslint = new ESLint(eslintOptions);
 
     // 2. Lint files. This doesn't modify target files.
     const results = await eslint.lintFiles([files]);
