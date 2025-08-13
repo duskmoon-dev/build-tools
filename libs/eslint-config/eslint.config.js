@@ -271,6 +271,9 @@ module.exports = [
     plugins: {
       "@typescript-eslint": typescriptEslintPlugin,
     },
-    rules: {},
+    rules: {
+      ...typescriptEslintPlugin.configs.recommended.rules,
+      "no-var": "error",
+    },
   },
 ];

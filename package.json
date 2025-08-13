@@ -4,6 +4,7 @@
   "private": true,
   "workspaces": [
     "cli",
+    "commands/*",
     "libs/*"
   ],
   "scripts": {
@@ -19,7 +20,6 @@
     "turbo": "^2.5.5"
   },
   "engines": {
-    "node": ">=16.0.0"
-  },
-  "packageManager": "pnpm@8.15.5"
+    "node": ">=20.0.0"
+  }
 }
