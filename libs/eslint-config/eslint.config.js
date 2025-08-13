@@ -35,7 +35,7 @@ module.exports = [
       "consistent-this": "off", // Too many use-cases for reassigning "this" to different values
       "constructor-super": "error",
       curly: ["error", "multi-line"],
-      "default-case": "error",
+      "default-case": "off",
       "default-case-last": "error",
       "default-param-last": "off",
       "dot-notation": "error",
@@ -185,15 +185,7 @@ module.exports = [
       "no-unused-expressions": "off",
       "no-unused-labels": "error",
       "no-unused-private-class-members": "error",
-      "no-unused-vars": [
-        "error",
-        {
-          args: "after-used",
-          argsIgnorePattern: "^_",
-          ignoreRestSiblings: true,
-          varsIgnorePattern: "^ignored",
-        },
-      ],
+      "no-unused-vars": "off",
       "no-use-before-define": ["error", "nofunc"],
       "no-useless-backreference": "error",
       "no-useless-call": "error",
@@ -250,6 +242,24 @@ module.exports = [
   },
   ...importJs,
   eslintConfigPrettier,
+  {
+    files: ["**/__tests__/**/*.ts?(x)"],
+    plugins: {
+      jest: require("eslint-plugin-jest"),
+    },
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
+    },
+    rules: {
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error",
+    },
+  },
   {
     files: ["**/*.ts?(x)"],
     languageOptions: {

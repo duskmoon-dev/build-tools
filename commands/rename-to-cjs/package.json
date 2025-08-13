@@ -23,6 +23,7 @@
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
     "rename-to-cjs": "node bin/rename-to-cjs.js 'dist/cjs/**/*.js'",
     "test": "jest --passWithNoTests",
+    "lint": "eslint --config ../../eslint.config.js --fix src",
     "clean": "rimraf dist"
   },
   "author": "",

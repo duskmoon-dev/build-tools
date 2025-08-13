@@ -24,6 +24,7 @@
     "build:bundle": "rollup -c rollup.config.js",
     "rename-to-cjs": "rename-to-cjs 'dist/cjs/**/*.js'",
     "test": "jest --passWithNoTests",
+    "lint": "eslint --config ../../eslint.config.js --fix src",
     "clean": "rimraf dist"
   },
   "keywords": [
