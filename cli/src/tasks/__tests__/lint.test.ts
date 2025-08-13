@@ -14,7 +14,7 @@ describe("lint task", () => {
   afterEach(async () => {
     try {
       await rm(filePath);
-    } catch (_e) {
+    } catch {
       // ignore if file does not exist
     }
   });

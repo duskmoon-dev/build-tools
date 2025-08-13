@@ -1,4 +1,4 @@
-import { rollup, type RollupOptions, type OutputOptions } from "rollup";
+import { rollup, type RollupOptions } from "rollup";
 import { generateOutputs } from "./generateOutputs.js";
 
 export const build = async (options: RollupOptions) => {

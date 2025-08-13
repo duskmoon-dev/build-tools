@@ -1,6 +1,6 @@
-import { findFileUp, findFileUpMultiple } from "../findFileUp";
 import { fileURLToPath } from "node:url";
 import { dirname } from "node:path";
+import { findFileUp, findFileUpMultiple } from "../findFileUp";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

@@ -6,7 +6,12 @@ import { ESLint } from "eslint";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export const run = async (files = "src/**/*.js", opts: any) => {
+interface LintOptions {
+  fix: string;
+  tsconfigPath?: string;
+}
+
+export const run = async (files = "src/**/*.js", opts: LintOptions) => {
   // 1. Create an instance with the `fix` option.
   const eslintOptions: ESLint.Options = {
     fix: opts.fix === "true",

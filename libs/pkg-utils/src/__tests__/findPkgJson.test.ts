@@ -1,6 +1,6 @@
-import { findPkgJson } from "../findPkgJson";
 import { fileURLToPath } from "node:url";
 import { dirname } from "node:path";
+import { findPkgJson } from "../findPkgJson";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
