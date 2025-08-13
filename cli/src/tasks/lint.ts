@@ -10,14 +10,16 @@ export const run = async (files = "src/**/*.js", opts: any) => {
     // 1. Create an instance with the `fix` option.
     const eslintOptions: ESLint.Options = {
       fix: opts.fix === 'true',
-      overrideConfigFile: path.resolve(__dirname, '../../../.eslintrc.js'),
+      overrideConfigFile: path.resolve(__dirname, '../../../eslint.config.js'),
       cwd: path.resolve(__dirname, '../../../')
     };
 
     if (opts.tsconfigPath) {
       eslintOptions.overrideConfig = {
-        parserOptions: {
-          project: opts.tsconfigPath
+        languageOptions: {
+          parserOptions: {
+            project: opts.tsconfigPath
+          }
         }
       };
     }

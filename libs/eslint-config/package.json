@@ -2,13 +2,12 @@
   "name": "@duskmoon-dev/eslint-config",
   "version": "1.0.0",
   "description": "eslint config of @duskmoon-dev",
-  "main": "index.js",
+  "main": "eslint.config.js",
   "scripts": {
     "find-new-rules": "npm-run-all --parallel find-new-rules:*",
-    "find-new-rules:main": "eslint-find-rules --unused ./index.js",
-    "lint": "eslint --config index.js .",
-    "test": "npm-run-all --parallel lint find-new-rules",
-    "validate": "npm-run-all --parallel lint test"
+    "find-new-rules:main": "eslint-find-rules --unused --flatConfig ./eslint.config.js",
+    "lint": "eslint --config eslint.config.js .",
+    "test": "pnpm lint"
   },
   "keywords": [
     "eslint",
@@ -38,7 +37,8 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-testing-library": "^7.6.6"
+    "eslint-plugin-testing-library": "^7.6.6",
+    "globals": "^15.8.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
