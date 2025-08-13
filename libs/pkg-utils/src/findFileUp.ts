@@ -20,7 +20,7 @@ const fileExists = async (f: string) => {
   try {
     await fsPromises.access(f);
     return true;
-  } catch (_) {
+  } catch (_ignored) {
     return false;
   }
 };
@@ -38,16 +38,17 @@ const tryFindFile = async (directory: string, name: string) => {
 
 export const findFileUpMultiple = async (
   name: string,
-  options: fileFileUpOptions = {}
+  options: fileFileUpOptions = {},
 ) => {
   let directory = pathResolve(toPath(options.cwd) || process.cwd());
   const { root } = pathParse(directory);
   const stopAt = pathResolve(directory, options.stopAt || root);
   const limit = options.limit || Number.POSITIVE_INFINITY;
   let findCount = 0;
-  let filesBeFound = [];
+  const filesBeFound = [];
 
   while (true) {
+    // eslint-disable-next-line no-await-in-loop
     const { parentDir, found, file } = await tryFindFile(directory, name);
     if (found) {
       findCount += 1;
@@ -61,11 +62,14 @@ export const findFileUpMultiple = async (
     }
     directory = parentDir;
   }
-  
+
   return filesBeFound;
 };
 
-export const findFileUp = async ( name: string, options: fileFileUpOptions = {} ) => {
+export const findFileUp = async (
+  name: string,
+  options: fileFileUpOptions = {},
+) => {
   const result = await findFileUpMultiple(name, { ...options, limit: 1 });
 
   return result[0] ?? null;

@@ -9,12 +9,12 @@ program
   .option(
     "-t, --target <target>",
     "output moudle type, for example: es2021, es2022, esnext",
-    "es2021"
+    "es2021",
   )
   .option(
     "-m, --module <module>",
     "output moudle type, for example: esnext, commonjs",
-    "esnext"
+    "esnext",
   )
   .action(async (opts) => {
     const { run } = await import("./tasks/build.js");
@@ -32,7 +32,7 @@ program
 program
   .command("bundle")
   .description("bundle script")
-  .option("-i, --input <file>", 'entry file')
+  .option("-i, --input <file>", "entry file")
   .action(async (opts) => {
     const { run } = await import("./tasks/bundle.js");
     await run(opts);
@@ -44,7 +44,7 @@ program
   .option(
     "--fix",
     "output moudle type, for example: es2021, es2022, esnext",
-    "false"
+    "false",
   )
   .action(async (glob, opts) => {
     const { run } = await import("./tasks/lint.js");

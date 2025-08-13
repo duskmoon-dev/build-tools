@@ -5,7 +5,5 @@ import { loadConfig } from "./loadConfig.js";
 export const run = async () => {
   const options = await loadConfig();
 
-  for (let opt of options) {
-    await build(opt);
-  }
+  await Promise.all(options.map((opt) => build(opt)));
 };

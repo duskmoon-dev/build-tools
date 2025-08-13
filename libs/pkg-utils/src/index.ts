@@ -1,4 +1,1 @@
-export {
-  findFileUp,
-  findFileUpMultiple,
-} from './findFileUp';
+export { findFileUp, findFileUpMultiple } from "./findFileUp";

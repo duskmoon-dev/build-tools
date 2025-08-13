@@ -20,15 +20,15 @@ export default {
     {
       inlineDynamicImports: true,
       dir: 'dist',
-      name: name,
+      name,
       format: 'cjs'
     },
     {
       inlineDynamicImports: true,
       dir: 'dist',
-      name: name,
+      name,
       format: 'es'
     },
   ],
-  plugins: plugins,
+  plugins,
 };

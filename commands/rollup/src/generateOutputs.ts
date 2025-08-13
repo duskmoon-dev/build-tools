@@ -1,17 +1,8 @@
-import { type RollupBuild, type RollupOptions, type OutputOptions } from "rollup";
-
-export const generateOutputs = async (
-  bundle: RollupBuild,
-  outputOptionConfig: OutputOptions[] | OutputOptions
-) => {
-  if (Array.isArray(outputOptionConfig)) {
-    for (const outputOptions of outputOptionConfig) {
-      await generate(bundle, outputOptions);
-    }
-  } else {
-    await generate(bundle, outputOptionConfig)
-  }
-};
+import {
+  type RollupBuild,
+  type RollupOptions,
+  type OutputOptions,
+} from "rollup";
 
 const generate = async (bundle: RollupBuild, outputOptions: OutputOptions) => {
   // generate output specific code in-memory
@@ -58,5 +49,20 @@ const generate = async (bundle: RollupBuild, outputOptions: OutputOptions) => {
       // }
       console.log("Chunk", chunkOrAsset.modules);
     }
+  }
+};
+
+export const generateOutputs = async (
+  bundle: RollupBuild,
+  outputOptionConfig: OutputOptions[] | OutputOptions,
+) => {
+  if (Array.isArray(outputOptionConfig)) {
+    await Promise.all(
+      outputOptionConfig.map((outputOptions) =>
+        generate(bundle, outputOptions)
+      )
+    );
+  } else {
+    await generate(bundle, outputOptionConfig);
   }
 };
