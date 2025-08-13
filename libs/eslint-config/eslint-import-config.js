@@ -1,12 +1,17 @@
-module.exports = {
-  env: {
-    es6: true,
-  },
-  parserOptions: {
+const globals = require("globals");
+const importPlugin = require("eslint-plugin-import");
+
+module.exports = [{
+  languageOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
+    globals: {
+      ...globals.es6,
+    },
   },
-  plugins: ["import"],
+  plugins: {
+    import: importPlugin,
+  },
   settings: {
     "import/ignore": ["node_modules", ".json$", ".(scss|less|css|styl)$"],
   },
@@ -66,19 +71,13 @@ module.exports = {
     "import/prefer-default-export": "off",
     "import/unambiguous": "off", // not sure I understand this rule well enough right now...
   },
-  overrides: [
-    {
-      files: ["**/*.ts?(x)"],
-      extends: "plugin:import/typescript",
-      parser: "@typescript-eslint/parser",
-      parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: "module",
-      },
-      plugins: ["@typescript-eslint"],
-      rules: {
-        "import/no-unresolved": "off", // ts(2307)
-      },
-    },
-  ],
-};
+},
+{
+  files: ["**/*.ts?(x)"],
+  plugins: {
+    import: importPlugin,
+  },
+  rules: {
+    "import/no-unresolved": "off", // ts(2307)
+  },
+}];
