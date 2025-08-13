@@ -22,7 +22,7 @@
     "build:esm": "tsc --module esnext --target es2021 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
     "rename-to-cjs": "node bin/rename-to-cjs.js 'dist/cjs/**/*.js'",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "clean": "rimraf dist"
   },
   "author": "",
