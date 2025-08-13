@@ -8,16 +8,15 @@
     "libs/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
+    "build": "bun run --filter \"@duskmoon-dev/*\" build",
+    "dev": "bun run --filter \"@duskmoon-dev/*\" dev",
+    "lint": "bun run --filter \"@duskmoon-dev/*\" lint",
+    "test": "bun run --filter \"@duskmoon-dev/*\" test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@duskmoon-dev/eslint-config": "workspace:*",
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.5"
+    "prettier": "^3.6.2"
   },
   "engines": {
     "node": ">=20.0.0"
