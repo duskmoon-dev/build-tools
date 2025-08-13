@@ -28,13 +28,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "glob": "^9.3.2"
+    "glob": "^11.0.3"
   },
   "devDependencies": {
-    "@duskmoon-dev/tsconfig": "workspace:^1.0.0",
+    "@duskmoon-dev/tsconfig": "workspace:^",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^4.4.0",
-    "typescript": "^4.9.4"
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

@@ -6,6 +6,7 @@
     "target": "ESNext",
     "lib": ["esnext", "dom"],
     "module": "nodenext",
+    "moduleResolution": "nodenext",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
