@@ -24,10 +24,13 @@
     "rename-to-cjs": "node bin/rename-to-cjs.js 'dist/cjs/**/*.js'",
     "test": "jest --passWithNoTests",
     "lint": "eslint --config ../../eslint.config.js --fix src",
-    "clean": "rimraf dist"
+    "clean": "del dist"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "glob": "^11.0.3"
   },
@@ -35,7 +38,7 @@
     "@duskmoon-dev/tsconfig": "workspace:^",
     "jest": "^30.0.5",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^6.0.1",
+    "del-cli": "^6.0.0",
     "typescript": "^5.9.2"
   },
   "publishConfig": {

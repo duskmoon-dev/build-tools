@@ -1,6 +1,6 @@
 import path from "node:path";
 import { existsSync } from "node:fs";
-import { rollup, type MergedRollupOptions } from "rollup";
+import { type MergedRollupOptions } from "rollup";
 import { loadConfigFile } from "rollup/loadConfigFile";
 
 import defaultConfig from "./rollup.config.js";

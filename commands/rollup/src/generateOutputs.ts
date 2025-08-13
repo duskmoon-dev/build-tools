@@ -1,6 +1,5 @@
 import {
   type RollupBuild,
-  type RollupOptions,
   type OutputOptions,
 } from "rollup";
 

@@ -1,4 +1,4 @@
-export const run = async (cmd: "dev" | "build", opts: any) => {
+export const run = async (cmd: "dev" | "build") => {
   switch (cmd) {
     case "dev":
       console.log("start storybook dev");

@@ -9,6 +9,9 @@
   ],
   "author": "Jonathan Gao",
   "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "files": [
     "base.json",
     "nextjs.json",

@@ -1,3 +1,7 @@
 {
-  "name": "@duskmmon-dev/prettier"
+  "name": "@duskmmon-dev/prettier",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }

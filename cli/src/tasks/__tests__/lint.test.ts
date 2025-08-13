@@ -14,7 +14,7 @@ describe("lint task", () => {
   afterEach(async () => {
     try {
       await rm(filePath);
-    } catch (_e) {
+    } catch {
       // ignore if file does not exist
     }
   });
@@ -31,9 +31,7 @@ describe("lint task", () => {
       tsconfigPath: join(__dirname, "fixtures", "tsconfig.test.json"),
     });
 
-    expect(consoleLogSpy).toHaveBeenCalled();
-    const lastCallIndex = consoleLogSpy.mock.calls.length - 1;
-    const output = consoleLogSpy.mock.calls[lastCallIndex][0] as string;
+    const output = consoleLogSpy.mock.calls.map((call) => call[0]).join("\n");
     expect(output).toContain("Unexpected var, use let or const instead");
 
     consoleLogSpy.mockRestore();

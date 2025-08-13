@@ -4,7 +4,7 @@ This repository is a monorepo containing various build and development tools for
 
 ## Packages
 
-This monorepo is managed with pnpm and contains the following packages:
+This monorepo is managed with bun and contains the following packages:
 
 - `cli`: A command-line interface for accessing the build tools.
 - `libs/eslint-config`: A shared ESLint configuration.
@@ -16,8 +16,8 @@ This monorepo is managed with pnpm and contains the following packages:
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [pnpm](https://pnpm.io/)
+- [Node.js](https://nodejs.org/) (v20 or higher)
+- [bun](https://bun.sh/)
 
 ### Installation
 
@@ -31,7 +31,7 @@ This monorepo is managed with pnpm and contains the following packages:
    ```
 3. Install the dependencies:
    ```bash
-   pnpm install
+   bun install
    ```
 
 ## Usage
@@ -60,8 +60,8 @@ dm-cli <command> --help
 
 This project uses [Turborepo](https://turbo.build/repo) to manage the monorepo. The following scripts are available at the root level:
 
-- `pnpm build`: Builds all packages.
-- `pnpm dev`: Runs all packages in development mode.
-- `pnpm lint`: Lints all packages.
-- `pnpm test`: Runs tests for all packages.
-- `pnpm format`: Formats the entire codebase.
+- `bun build`: Builds all packages.
+- `bun dev`: Runs all packages in development mode.
+- `bun lint`: Lints all packages.
+- `bun test`: Runs tests for all packages.
+- `bun format`: Formats the entire codebase.

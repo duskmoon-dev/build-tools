@@ -1,4 +1,4 @@
-import { rollup, type RollupBuild } from "rollup";
+import { rollup, type RollupBuild, type RollupOptions } from "rollup";
 
 // you can create multiple outputs from the same input to generate e.g.
 // different formats like CommonJS and ESM
@@ -56,7 +56,7 @@ const generateOutputs = async (bundle: RollupBuild) => {
   );
 };
 
-export const run = async (inputOptions: any) => {
+export const run = async (inputOptions: RollupOptions) => {
   let bundle;
   let buildFailed = false;
   try {

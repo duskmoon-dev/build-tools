@@ -1,3 +1,7 @@
 {
-  "name": "@duskmmon-dev/tsc"
+  "name": "@duskmmon-dev/tsc",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }

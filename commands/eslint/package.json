@@ -1,3 +1,7 @@
 {
-  "name": "@duskmmon-dev/eslint"
+  "name": "@duskmmon-dev/eslint",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }

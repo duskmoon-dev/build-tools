@@ -20,7 +20,7 @@ const fileExists = async (f: string) => {
   try {
     await fsPromises.access(f);
     return true;
-  } catch (_ignored) {
+  } catch {
     return false;
   }
 };
